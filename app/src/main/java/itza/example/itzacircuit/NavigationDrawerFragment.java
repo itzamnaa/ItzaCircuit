@@ -25,6 +25,7 @@ import android.widget.Toast;
 import itza.example.itzacircuit.Control.ui;
 import itza.example.itzacircuit.Elements.Element;
 import itza.example.itzacircuit.Elements.Emat;
+import itza.example.itzacircuit.Nodo.NetList;
 import itza.example.itzacircuit.Nodo.Nodo;
 
 /**
@@ -259,7 +260,11 @@ public class NavigationDrawerFragment extends Fragment {
             //Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             //Nodo.makeNodos();
             Nodo.makeNodos();
+            Nodo.clean();
+            NetList.makeNetList();
+            NetList.clean();
             ui.nodeview.setText(Nodo.nodostoString());
+            ui.nodeview.setText(NetList.NetListtoString());
             return true;
         }
 

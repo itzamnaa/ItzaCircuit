@@ -1,13 +1,6 @@
 package itza.example.itzacircuit;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -24,18 +17,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewFlipper;
 import android.widget.ViewSwitcher;
-
 import java.io.File;
-import java.io.IOException;
-import java.util.EnumMap;
-
 import itza.example.itzacircuit.Control.Save;
 import itza.example.itzacircuit.Control.ui;
 import itza.example.itzacircuit.Elements.Emat;
 import itza.example.itzacircuit.Elements.List;
+import itza.example.itzacircuit.Nodo.NetList;
 
 
 public class ItzaCircuit extends ActionBarActivity
@@ -190,6 +179,7 @@ public class ItzaCircuit extends ActionBarActivity
             ui.init();
             Emat.init(ui.tabla);
             List.init();
+            NetList.init();
             //Elementos que no pueden salir a UI porque tienen control de Activity
             Button test=(Button)rv.findViewById(R.id.test);
             Button bload=(Button)rv.findViewById(R.id.bload);

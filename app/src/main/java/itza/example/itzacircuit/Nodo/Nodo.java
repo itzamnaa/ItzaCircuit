@@ -40,7 +40,26 @@ public class Nodo {
         Arrays.sort(chars);
         code = new String(chars);
     }
-    public void clean(){
+    public static void clean(){
+        ArrayList<Nodo>temp=new ArrayList<Nodo>();
+        for (Nodo n:nodos){
+            for (Nodo t:temp){
+                if (t.code.equals(n.code))
+                    temp.remove(t);
+            }
+            temp.add(n);
+        }
+        nodos=temp;
+        Nodo base=null;
+        for (Nodo n:nodos){
+            if (n.elements.contains(List.tierras.get(0)))
+                base=n;
+        }
+        nodos.remove(base);
+        nodos.add(0,base);
+        for(int i=0;i<nodos.size();i++){
+            nodos.get(i).n=i;
+        }
     }
     public static String nodostoString(){
         String s="";
@@ -49,7 +68,8 @@ public class Nodo {
                 if (e.tipo!=util.conector)
                     s+=e.name+"|";
             }
-            s+="\n";
+
+            s+="\t"+n.n+"\n";
         }
         s+="Lista de "+nodos.size()+" elemetos";
         return s;

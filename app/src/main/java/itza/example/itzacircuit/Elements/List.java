@@ -49,7 +49,7 @@ public class List {
             resistencias.get(i).name="R"+(i+1);
         }
         for(i=0;i<fuentes.size();i++){
-            fuentes.get(i).name="F"+(i+1);
+            fuentes.get(i).name="V"+(i+1);
         }
         if(!tierras.isEmpty())
         tierras.get(0).name="GR";
